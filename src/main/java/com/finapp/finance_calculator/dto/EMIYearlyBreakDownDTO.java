@@ -1,6 +1,6 @@
-package com.finapp.finance_calculator.emi;
+package com.finapp.finance_calculator.dto;
 
-public class YearlyEMISummary {
+public class EMIYearlyBreakDownDTO {
 	private int year;
 	private double principalPaid;
 	private double interestPaid;

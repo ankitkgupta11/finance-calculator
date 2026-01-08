@@ -1,4 +1,4 @@
-package com.finapp.finance_calculator.emi;
+package com.finapp.finance_calculator.dto;
 
 public class EMIRequestDTO {
 	private double principal;

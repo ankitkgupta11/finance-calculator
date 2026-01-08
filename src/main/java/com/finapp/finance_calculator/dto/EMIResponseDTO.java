@@ -1,4 +1,4 @@
-package com.finapp.finance_calculator.emi;
+package com.finapp.finance_calculator.dto;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ public class EMIResponseDTO {
 	private double emi;
     private double totalInterest;
     private double totalAmount;
-    private List<YearlyEMISummary> schedule;
+    private List<EMIYearlyBreakDownDTO> schedule;
 	public double getEmi() {
 		return emi;
 	}
@@ -25,10 +25,10 @@ public class EMIResponseDTO {
 	public void setTotalAmount(double totalAmount) {
 		this.totalAmount = totalAmount;
 	}
-	public List<YearlyEMISummary> getSchedule() {
+	public List<EMIYearlyBreakDownDTO> getSchedule() {
 		return schedule;
 	}
-	public void setSchedule(List<YearlyEMISummary> schedule) {
+	public void setSchedule(List<EMIYearlyBreakDownDTO> schedule) {
 		this.schedule = schedule;
 	}
 

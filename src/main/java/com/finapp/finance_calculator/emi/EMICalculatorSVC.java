@@ -5,7 +5,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-public class EMICalculatorUtil {
+import com.finapp.finance_calculator.dto.EMIRequestDTO;
+import com.finapp.finance_calculator.dto.EMIResponseDTO;
+import com.finapp.finance_calculator.dto.EMIYearlyBreakDownDTO;
+
+public class EMICalculatorSVC {
 
 	private static final Map<String, Double> defaultRates = Map.of("home", 8.5, "gold", 9.0, "vehicle", 9.5, "personal",
 			11.5, "education", 10.0);
@@ -44,7 +48,7 @@ public class EMICalculatorUtil {
 		String requestStartDate = (request.getStartDate() == null) ? LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
 				: request.getStartDate();
 		LocalDate startDate = LocalDate.parse(requestStartDate, DateTimeFormatter.ISO_LOCAL_DATE);
-		Map<Integer, YearlyEMISummary> yearlyMap = new LinkedHashMap<>();
+		Map<Integer, EMIYearlyBreakDownDTO> yearlyMap = new LinkedHashMap<>();
 
 		for (int i = 1; i <= months; i++) {
 			double interest = remainingPrincipal * monthlyRate;
@@ -54,7 +58,7 @@ public class EMICalculatorUtil {
 			LocalDate currentMonth = startDate.plusMonths(i - 1);
 			int year = currentMonth.getYear();
 
-			YearlyEMISummary summary = yearlyMap.getOrDefault(year, new YearlyEMISummary());
+			EMIYearlyBreakDownDTO summary = yearlyMap.getOrDefault(year, new EMIYearlyBreakDownDTO());
 			summary.setYear(year);
 			summary.setPrincipalPaid(summary.getPrincipalPaid() + principalComponent);
 			summary.setInterestPaid(summary.getInterestPaid() + interest);

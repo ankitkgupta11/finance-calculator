@@ -18,7 +18,6 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody AppUser user) {
-        // Static username/password (replace with DB later)
         if ("admin".equals(user.getUsername()) && "password".equals(user.getPassword())) {
             String token = jwtUtil.generateToken(user.getUsername());
             return ResponseEntity.ok().body(Map.of("token", token));
