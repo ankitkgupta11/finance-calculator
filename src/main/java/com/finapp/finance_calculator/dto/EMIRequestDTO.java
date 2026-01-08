@@ -1,7 +1,7 @@
 package com.finapp.finance_calculator.dto;
 
 public class EMIRequestDTO {
-	private double principal;
+	private double principal; 
 	private double annualRate;
 	private int durationValue;
 	private String durationUnit;
