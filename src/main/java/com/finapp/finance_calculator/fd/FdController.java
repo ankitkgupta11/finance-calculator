@@ -4,6 +4,7 @@ import com.finapp.finance_calculator.dto.FdRequestDTO;
 import com.finapp.finance_calculator.dto.FdResponseDTO;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:8081")
 @RestController
 @RequestMapping("/api/fd")
 public class FdController {

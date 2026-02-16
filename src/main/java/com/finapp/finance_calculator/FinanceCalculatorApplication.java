@@ -8,7 +8,7 @@ public class FinanceCalculatorApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(FinanceCalculatorApplication.class, args);
-		System.out.println("Jai Siya Ram");
+		System.out.println("Jai Siya Ram"); 
 	}
 
 }
