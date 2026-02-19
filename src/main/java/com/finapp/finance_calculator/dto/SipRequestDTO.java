@@ -3,7 +3,7 @@ package com.finapp.finance_calculator.dto;
 public class SipRequestDTO {
     private double monthlyInvestment;
     private double annualRate;
-    private int durationYears;
+    private int durationMonth;
 	public double getMonthlyInvestment() {
 		return monthlyInvestment;
 	}
@@ -16,12 +16,11 @@ public class SipRequestDTO {
 	public void setAnnualRate(double annualRate) {
 		this.annualRate = annualRate;
 	}
-	public int getDurationYears() {
-		return durationYears;
+	public int getDurationMonth() {
+		return durationMonth;
 	}
-	public void setDurationYears(int durationYears) {
-		this.durationYears = durationYears;
+	public void setDurationMonth(int durationMonth) {
+		this.durationMonth = durationMonth;
 	}
-    
-
+	
 }

@@ -52,5 +52,4 @@ public class FdRequestDTO {
 		this.startDate = startDate;
 	}
 
-	// getters & setters
 }
