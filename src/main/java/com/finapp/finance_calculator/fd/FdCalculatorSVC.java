@@ -45,7 +45,7 @@ public class FdCalculatorSVC {
             double payoutPerPeriod =
                     annualInterest / payoutType.getPeriods();
 
-            response.setMaturityAmount(round(principal)); // principal returned
+            response.setMaturityAmount(round(principal));
             response.setTotalInterestEarned(round(totalInterest));
             response.setPeriodicPayout(round(payoutPerPeriod));
         }

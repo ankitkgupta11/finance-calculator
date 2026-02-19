@@ -23,5 +23,4 @@ public class LumpSumRequestDTO {
 		this.durationYears = durationYears;
 	}
 
-    // Getters and Setters
 }

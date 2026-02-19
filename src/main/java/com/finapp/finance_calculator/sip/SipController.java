@@ -1,5 +1,7 @@
 package com.finapp.finance_calculator.sip;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +12,7 @@ import com.finapp.finance_calculator.dto.SipResponseDTO;
 
 import lombok.RequiredArgsConstructor;
 
+@CrossOrigin(origins = "http://localhost:8081")
 @RestController
 @RequestMapping("/api/sip")
 @RequiredArgsConstructor
