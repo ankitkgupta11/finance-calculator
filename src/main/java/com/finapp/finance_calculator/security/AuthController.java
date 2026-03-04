@@ -1,29 +1,30 @@
-package com.finapp.finance_calculator.security;
-
-
-import java.util.Map;
-
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-@RestController
-@RequestMapping("/api/auth")
-public class AuthController {
-
-    private final JwtUtil jwtUtil;
-
-    public AuthController(JwtUtil jwtUtil) {
-        this.jwtUtil = jwtUtil;
-    }
-
-    @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody AppUser user) {
-        if ("admin".equals(user.getUsername()) && "password".equals(user.getPassword())) {
-            String token = jwtUtil.generateToken(user.getUsername());
-            return ResponseEntity.ok().body(Map.of("token", token));
-        } else {
-            return ResponseEntity.status(401).body("Invalid credentials");
-        }
-    }
-}
- 
+//package com.finapp.finance_calculator.security;
+//
+//import org.springframework.http.ResponseEntity;
+//import org.springframework.web.bind.annotation.*;
+//
+//import com.finapp.finance_calculator.dto.LoginRequestDTO;
+//import com.finapp.finance_calculator.dto.LoginResponseDTO;
+//
+//@RestController
+//@RequestMapping("/api/auth")
+//public class AuthController {
+//
+//    private final AuthService authService;
+//
+//
+//    public AuthController(AuthService authService) {
+//        this.authService=authService;
+//    }
+//    
+//
+//    /**
+//     * @param request
+//     * @return
+//     */
+//    @PostMapping("/login")
+//    public ResponseEntity<LoginResponseDTO> login(@RequestBody LoginRequestDTO request) {
+//        return ResponseEntity.ok(authService.login(request));
+//    }
+//}
+// 
