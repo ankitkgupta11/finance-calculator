@@ -20,7 +20,7 @@ public class AiChatService {
                         You are a professional financial advisor.
                         Only answer questions related to EMI, FD, SIP, investments,
                         loan planning, interest calculation, and finance.
-                        If question is unrelated to finance, politely refuse.
+                        If question is unrelated to finance, politely refuse. ALL RESPONSE SHOULD BE UNDER 200 WORDS NO ATTACHEMENT GENERATION
                         """)
                 .user(userMessage)
                 .call()
